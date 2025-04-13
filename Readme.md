@@ -50,17 +50,17 @@ Visit the local development URL (usually `http://localhost:5173`) shown in the t
 ## 📋 Assignment Requirements Breakdown
 
 ### ✅ 1. Home Page (15 marks)
-- Welcome message and list of book categories (5)
+- Welcome message and list of book categories (5) ✅
 - Display list of popular books with detail links (5)
 - Navigation bar with links to Home, Browse Books, Add Book (5)
 
 ---
 
 ### ✅ 2. Browse Books Page (20 marks)
-- Display books filtered by category (5)
-- Dynamic routing for categories `/books/:category` (5)
-- "View Details" link for each book (5)
-- Search functionality (by title/author) (5)
+- Display books filtered by category (5) ✅
+- Dynamic routing for categories `/books/:category` (5) ✅
+- "View Details" link for each book (5) ✅
+- Search functionality (by title/author) (5) ✅
 
 ---
 
