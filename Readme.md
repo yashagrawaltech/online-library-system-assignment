@@ -6,8 +6,8 @@ An interactive and minimal **Online Library System** built with React and Redux.
 
 ## 🔗 Links
 
-- **GitHub Repository:** [GitHub Link](https://github.com/your-username/online-library-system)
-- **Live Demo:** [Live Link](https://your-live-url.vercel.app)
+- **GitHub Repository:** https://github.com/yashagrawaltech/online-library-system-assignment
+- **Live Demo:** https://online-library-system-assignment.netlify.app/
 
 ---
 
@@ -16,7 +16,7 @@ An interactive and minimal **Online Library System** built with React and Redux.
 1. **Clone the repository**
 
 ```bash
-git clone https://github.com/your-username/online-library-system.git
+git clone https://github.com/yashagrawaltech/online-library-system-assignment.git
 cd online-library-system
 ```
 
@@ -86,7 +86,7 @@ Visit the local development URL (usually `http://localhost:5173`) shown in the t
 ---
 
 ### 📤 Submission (10 marks)
-- GitHub repo link submitted (5)
+- GitHub repo link submitted (5) ✅
 - README with run instructions (5) ✅
 
 ---
