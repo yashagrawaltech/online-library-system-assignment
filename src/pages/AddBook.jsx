@@ -1,7 +1,62 @@
-// import { useEffect, useState } from "react";
+import { useState } from "react";
 import Navbar from "../components/Navbar";
+import { useDispatch } from "react-redux";
+import { addBook } from "../utils/book-slice";
+import { useNavigate } from "react-router-dom";
 
 const AddBook = () => {
+    const [formData, setFormData] = useState({
+        title: "",
+        description: "",
+        author: "",
+        category: "",
+    });
+
+    const [error, setError] = useState("");
+
+    const handleChange = (e) => {
+        setError("");
+        const target = e.target;
+        if (target) {
+            const name = target.name;
+            setFormData((p) => ({ ...p, [name]: target.value }));
+        }
+    };
+
+    const validateForm = () => {
+        if (
+            !formData.author ||
+            !formData.category ||
+            !formData.description ||
+            !formData.title
+        ) {
+            return "all fields are required";
+        }
+
+        if (formData.description.length < 50) {
+            return "description must be atleast 50 characters long";
+        }
+    };
+
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const handleAddBook = (e) => {
+        e.preventDefault();
+
+        const error = validateForm();
+        if (error) {
+            return setError(error);
+        }
+
+        try {
+            dispatch(addBook(formData));
+            navigate("/browse-books");
+        } catch (error) {
+            setError(error.message);
+        }
+    };
+
     return (
         <main className="w-dvw h-dvh text-white overflow-y-auto relative">
             <Navbar />
@@ -13,7 +68,15 @@ const AddBook = () => {
                 <hr className="w-[20%] md:w-[10%] fill-gray-200 border-2 rounded-md" />
             </div>
             <div className="w-full flex flex-col items-center gap-8 overflow-clip px-4 md:px-8 lg:px-16 xl:px-24">
-                <form className="w-full p-4 rounded-2xl flex flex-col items-start gap-4">
+                <form
+                    className="w-full p-4 rounded-2xl flex flex-col items-start gap-4"
+                    onSubmit={handleAddBook}
+                >
+                    {error ? (
+                        <p className="text-red-800 text-lg w-full bg-red-200/50 px-4 py-2 rounded-md">
+                            {error}
+                        </p>
+                    ) : null}
                     <fieldset className="flex flex-col items-start gap-2 w-full">
                         <label htmlFor="title">
                             Book Title{" "}
@@ -24,6 +87,8 @@ const AddBook = () => {
                             </sup>{" "}
                         </label>
                         <input
+                            onChange={handleChange}
+                            value={formData.title}
                             className="w-full p-3 rounded-md bg-gray-800/50 border outline-none"
                             placeholder="Atomic Habit"
                             type="text"
@@ -41,6 +106,8 @@ const AddBook = () => {
                             </sup>{" "}
                         </label>
                         <textarea
+                            onChange={handleChange}
+                            value={formData.description}
                             className="w-full p-3 rounded-md bg-gray-800/50 border outline-none"
                             placeholder="An easy and proven way to build good habits and break bad ones."
                             name="description"
@@ -57,6 +124,8 @@ const AddBook = () => {
                             </sup>{" "}
                         </label>
                         <input
+                            onChange={handleChange}
+                            value={formData.author}
                             className="w-full p-3 rounded-md bg-gray-800/50 border outline-none"
                             placeholder="James Clear"
                             type="text"
@@ -74,29 +143,13 @@ const AddBook = () => {
                             </sup>{" "}
                         </label>
                         <input
+                            onChange={handleChange}
+                            value={formData.category}
                             className="w-full p-3 rounded-md bg-gray-800/50 border outline-none"
                             placeholder="Self-Help"
                             type="text"
                             name="category"
                             id="category"
-                        />
-                    </fieldset>
-                    <fieldset className="flex flex-col items-start gap-2 w-full">
-                        <label htmlFor="cover">
-                            Book Cover{" "}
-                            <sup>
-                                <span className="text-red-400 text-base">
-                                    *
-                                </span>
-                            </sup>{" "}
-                        </label>
-                        <input
-                            className="w-full p-3 rounded-md bg-gray-800/50 border outline-none cursor-pointer"
-                            placeholder="Self-Help"
-                            type="file"
-                            accept="image/*"
-                            name="cover"
-                            id="cover"
                         />
                     </fieldset>
                     <button

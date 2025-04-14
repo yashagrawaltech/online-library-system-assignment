@@ -1,20 +1,19 @@
 import { useEffect, useState } from "react";
 import BookCard from "../components/BookCard";
-import { books } from "../utils/book-data.js";
+import { useSelector } from "react-redux";
 
 const Home = () => {
     const [booksArray, setBooksArray] = useState([]);
+    const books = useSelector((state) => state.books);
 
     useEffect(() => {
-        if (books.length) {
-            const popularBooks = books
-                .sort((a, b) => {
-                    return b.rating - a.rating;
-                })
+        if (Array.isArray(books) && books.length) {
+            const popularBooks = [...books]
+                .sort((a, b) => b.rating - a.rating)
                 .slice(0, 10);
             setBooksArray(popularBooks);
         }
-    }, []);
+    }, [books]);
 
     return (
         <>

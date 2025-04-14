@@ -77,9 +77,9 @@ Visit the local development URL (usually `http://localhost:5173`) shown in the t
 ### ✅ 4. Add Book Page (30 marks)
 
 -   Form to add a new book (5) ✅
--   Use Redux to manage books list (10)
--   Redirect to Browse Books with new book visible (10)
--   Form validation (5)
+-   Use Redux to manage books list (10) ✅
+-   Redirect to Browse Books with new book visible (10) ✅
+-   Form validation (5) ✅
 
 ---
 

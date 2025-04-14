@@ -1,15 +1,17 @@
 import { useEffect, useState } from "react";
-import { books } from "../utils/book-data";
 import BookCard from "../components/BookCard";
+import { useSelector } from "react-redux";
 
 const BrowseBooks = () => {
     const [booksArray, setBooksArray] = useState([]);
+
+    const books = useSelector((state) => state.books);
 
     useEffect(() => {
         if (books.length) {
             setBooksArray(books);
         }
-    }, []);
+    }, [books]);
 
     return (
         <>
