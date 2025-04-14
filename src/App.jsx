@@ -3,6 +3,7 @@ import MainLayout from "./layouts/MainLayout";
 import Home from "./pages/Home";
 import FilteredBook from "./pages/FilteredBook";
 import Search from "./pages/Search";
+import NotFound from "./components/NotFound";
 
 const router = createBrowserRouter([
     {
@@ -18,6 +19,7 @@ const router = createBrowserRouter([
                 element: <FilteredBook />,
             },
         ],
+        errorElement: <NotFound />
     },
     {
       path: '/search/:search',

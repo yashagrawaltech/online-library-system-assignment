@@ -51,8 +51,8 @@ Visit the local development URL (usually `http://localhost:5173`) shown in the t
 
 ### ✅ 1. Home Page (15 marks)
 - Welcome message and list of book categories (5) ✅
-- Display list of popular books with detail links (5)
-- Navigation bar with links to Home, Browse Books, Add Book (5)
+- Display list of popular books with detail links (5) ✅
+- Navigation bar with links to Home, Browse Books, Add Book (5) ✅
 
 ---
 
@@ -80,8 +80,8 @@ Visit the local development URL (usually `http://localhost:5173`) shown in the t
 ---
 
 ### ✅ 5. 404 Page (10 marks)
-- Custom "Page Not Found" route (5)
-- Link back to Home page (5)
+- Custom "Page Not Found" route (5) ✅
+- Link back to Home page (5) ✅
 
 ---
 
