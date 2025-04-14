@@ -1,18 +1,13 @@
 import { useEffect, useState } from "react";
+import { books } from "../utils/book-data";
 import BookCard from "../components/BookCard";
-import { books } from "../utils/book-data.js";
 
-const Home = () => {
+const BrowseBooks = () => {
     const [booksArray, setBooksArray] = useState([]);
 
     useEffect(() => {
         if (books.length) {
-            const popularBooks = books
-                .sort((a, b) => {
-                    return b.rating - a.rating;
-                })
-                .slice(0, 10);
-            setBooksArray(popularBooks);
+            setBooksArray(books);
         }
     }, []);
 
@@ -21,7 +16,7 @@ const Home = () => {
             <div className="flex w-full px-4 md:px-8 lg:px-16 xl:px-24 items-center justify-center gap-4 opacity-70">
                 <hr className="w-[20%] md:w-[10%] fill-gray-200 border-2 rounded-md" />
                 <h2 className="sm:text-nowrap text-center text-xl md:text-3xl capitalize">
-                    Popular Books
+                    All Books
                 </h2>
                 <hr className="w-[20%] md:w-[10%] fill-gray-200 border-2 rounded-md" />
             </div>
@@ -34,4 +29,4 @@ const Home = () => {
     );
 };
 
-export default Home;
+export default BrowseBooks;

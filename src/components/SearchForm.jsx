@@ -24,7 +24,7 @@ const SearchForm = () => {
                 value={searchInput}
                 onChange={(e) => setSearchInput(e.currentTarget.value)}
                 type="text"
-                placeholder="AI Book"
+                placeholder="Atomic Habits"
             />
             <button
                 className="px-4 md:px-8 h-12 flex items-center gap-2 rounded-full bg-gray-950 text-white hover:bg-yellow-400 hover:text-zinc-900 transition-all duration-300 ease-in-out"
