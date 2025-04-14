@@ -12,14 +12,10 @@ const Search = () => {
     useEffect(() => {
         if (search) {
             setBooksArray(
-                books.filter(
-                    (b) =>
-                        b.title
-                            .toLowerCase()
-                            .includes(search.trim().toLocaleLowerCase()) ||
-                        b.author
-                            .toLowerCase()
-                            .includes(search.trim().toLocaleLowerCase())
+                books.filter((b) =>
+                    b.title
+                        .toLowerCase()
+                        .includes(search.trim().toLocaleLowerCase())
                 )
             );
         }
