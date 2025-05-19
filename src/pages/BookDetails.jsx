@@ -54,8 +54,8 @@ const BookDetails = () => {
     }
 
     return (
-        <div className="w-full grid grid-cols-9 gap-4 px-4 md:px-8 lg:px-16 xl:px-24 pb-8">
-            <div className="left col-span-3 relative rounded-2xl overflow-hidden">
+        <div className="w-full grid grid-cols-1 sm:grid-cols-9 gap-4 px-4 sm:px-8 lg:px-16 xl:px-24 pb-8">
+            <div className="left col-span-1 sm:col-span-3 relative rounded-2xl overflow-hidden">
                 <img
                     className="w-full object-cover object-center"
                     src={book.cover}
@@ -65,7 +65,7 @@ const BookDetails = () => {
                     ⭐ {book.rating}
                 </span>
             </div>
-            <div className="right flex flex-col gap-4 items-start col-span-6 p-4 border rounded-2xl bg-gray-900/90">
+            <div className="right flex flex-col gap-4 items-start col-span-1 sm:col-span-6 p-4 border rounded-2xl bg-gray-900/90">
                 <p className="px-4 py-2 text-zinc-900 rounded-md bg-gray-200">
                     {book.category}
                 </p>
